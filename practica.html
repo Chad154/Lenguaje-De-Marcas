@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Viaje</title>
+    <style>
+        /* Estilos generales del cuerpo del documento */
+        body {
+            background-color: #f4f4f4;
+            /* Color de fondo */
+            font-family: Arial, sans-serif;
+            /* Fuente predeterminada */
+            margin: 0;
+            /* Eliminar márgenes */
+            padding: 20px;
+            /* Espacio de 20px entre el borde y el contenido */
+            box-sizing: border-box;
+            /* Incluir padding y border en el tamaño total */
+        }
+
+        /* Estilos para el formulario */
+        form {
+            background-color: #e0f7fa;
+            /* Color de fondo azul claro */
+            border-radius: 10px;
+            /* Esquinas redondeadas */
+            padding: 20px;
+            /* Espacio de 20px entre el contenido y los bordes */
+            max-width: 600px;
+            /* Ancho máximo de 600px */
+            width: 100%;
+            /* El formulario ocupará el 100% del ancho disponible */
+            margin: 0 auto;
+            /* Centrar el formulario en la pantalla */
+            box-sizing: border-box;
+            /* Incluir padding en el tamaño total */
+        }
+
+        /* Títulos */
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            margin-left: 650px;
+        }
+
+        /* Alineación de campos en fila */
+        .form-group {
+            display: flex;
+            /* Elementos en fila */
+            align-items: center;
+            /* Alinea verticalmente */
+            margin-bottom: 20px;
+            /* Espacio entre los grupos */
+        }
+
+        /* Estilo de las etiquetas */
+        label {
+            width: 30%;
+            /* Ancho fijo para las etiquetas */
+            margin-right: 10px;
+            /* Espaciado con el campo */
+        }
+
+        /* Campos de entrada */
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="number"],
+        select {
+            background-color: #ffffff;
+            /* Fondo blanco */
+            border: 1px solid #ccc;
+            /* Borde gris */
+            border-radius: 5px;
+            /* Esquinas redondeadas */
+            padding: 10px;
+            /* Espaciado interno */
+            width: 100%;
+            /* Ancho fijo */
+            height: 40px;
+            /* Altura uniforme para todos */
+            box-sizing: border-box;
+            /* Incluir padding y borde en el tamaño total */
+        }
+
+        /* Estilo para los botones */
+        button {
+            background-color: #0288d1;
+            /* Fondo azul claro */
+            color: white;
+            /* Texto blanco */
+            border: none;
+            /* Sin borde */
+            border-radius: 5px;
+            /* Esquinas redondeadas */
+            padding: 10px 20px;
+            /* Relleno de 10px arriba y abajo, 20px a los lados */
+            cursor: pointer;
+            /* Cursor tipo puntero */
+            font-size: 16px;
+            /* Tamaño de fuente de 16px */
+            width: 100%;
+            /* Ocupa el 100% del ancho disponible */
+        }
+
+        /* Efecto al pasar el mouse sobre el botón */
+        button:hover {
+            background-color: #023c5d;
+            /* Cambia el color de fondo al pasar el mouse */
+        }
+
+        /* Fieldset */
+        fieldset {
+            border: 1px solid #ccc;
+            /* Borde gris */
+            padding: 10px;
+            border-radius: 5px;
+            /* Esquinas redondeadas */
+            margin-bottom: 20px;
+            /* Separación entre fieldset */
+        }
+
+        legend {
+            font-weight: bold;
+            /* Leyenda en negrita */
+        }
+
+        .checkbox-group label,
+        .radio-group label {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+            
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Formulario de Viaje</h1>
+    <p><b>* Campos obligatorios</b></p>
+    <form>
+
+
+        <!-- Nombre completo -->
+        <div class="form-group">
+            <label for="nombreCompleto">Nombre completo *</label>
+            <input type="text" id="nombreCompleto" name="nombreCompleto" required>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <!-- Paquete -->
+        <div class="form-group">
+            <label for="paquete">Selecciona el paquete *</label>
+            <select name="paquete" id="paquete" required>
+                <option value="alicante">Alicante</option>
+                <option value="madrid">Madrid</option>
+                <option value="barcelona">Barcelona</option>
+            </select>
+        </div>
+
+        <!-- Fecha de llegada -->
+        <div class="form-group">
+            <label for="fechaLlegada">Fecha de llegada *</label>
+            <input type="date" id="fechaLlegada" name="fechaLlegada" required>
+        </div>
+
+        <!-- Número de personas -->
+        <div class="form-group">
+            <label for="numPersonas">Número de personas *</label>
+            <input type="number" id="numPersonas" name="numPersonas" required>
+        </div>
+
+        <!-- Opciones adicionales -->
+        <fieldset>
+            <legend>¿Qué te gustaría incluir? *</legend>
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" name="incluye[]" value="embarque"> Embarque
+                </label>
+                <label>
+                    <input type="checkbox" name="incluye[]" value="comidas"> Comidas
+                </label>
+                <label>
+                    <input type="checkbox" name="incluye[]" value="excursiones"> Excursiones
+                </label>
+            </div>
+        </fieldset>
+
+        <!-- Código de descuento -->
+        <div class="form-group">
+            <label for="codigoDescuento">Código de descuento</label>
+            <input type="text" id="codigoDescuento" name="codigoDescuento">
+        </div>
+
+        <!-- Términos y condiciones -->
+        <fieldset>
+            <legend>Términos y Condiciones *</legend>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="terminos" value="acuerdo" required> Estoy de Acuerdo
+                </label>
+                <label>
+                    <input type="radio" name="terminos" value="noAcuerdo" required> No estoy de Acuerdo
+                </label>
+            </div>
+        </fieldset>
+
+        <!-- Botón de envío -->
+        <button type="submit">Completar la reserva</button>
+    </form>
+</body>
+
+</html>
